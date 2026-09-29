@@ -33,3 +33,5 @@ button:hover { background: #104b38; }
 #controls button { max-width: 100%; overflow-wrap: anywhere; margin-top: 0; }
 
 #explanation { margin: 20px 0; padding: 16px; border-left: 6px solid #8b1e24; background: #fff0eb; color: #752026; font-size: 1rem; overflow-wrap: anywhere; }
+
+.hint-word { text-decoration: underline; text-underline-offset: .12em; }

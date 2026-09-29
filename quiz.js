@@ -23,7 +23,11 @@ function shuffle(items) {
 function showQuestion(focus = false) {
   answered = false;
   const item = order[current];
-  byId('hint').textContent = `Hint: ${item.hint}`;
+  const hintWord = document.createElement('span');
+  hintWord.className = 'hint-word';
+  const [word, ...details] = item.hint.split(' ');
+  hintWord.textContent = word;
+  byId('hint').replaceChildren('Hint: ', hintWord, details.length ? ` ${details.join(' ')}` : '');
   const blank = document.createElement('span');
   blank.className = 'blank';
   blank.textContent = '___';
