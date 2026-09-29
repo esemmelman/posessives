@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Practice Spanish possessives with ten beginner sentences and immediate feedback.">
+  <title>Spanish Possessives</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="questions.js" defer></script>
+  <script src="quiz.js" defer></script>
+</head>
+<body>
+<main>
+  <header><p class="eyebrow">BEGINNER SPANISH</p><h1>Spanish possessives</h1>
+  <p>Complete the blank. Use the English hint to choose the possessive.</p></header>
+  <noscript>Please enable JavaScript to take the quiz.</noscript>
+  <div class="status"><span id="progress-text"></span><span id="score">Score: 0 / 0</span></div>
+  <progress id="progress" value="0" max="10" aria-label="Questions answered"></progress>
+  <section id="question-area" aria-labelledby="question-title">
+    <div class="question-row">
+      <div class="sentence-panel"><p id="hint" class="hint"></p><h2 id="question-title" lang="es" tabindex="-1"></h2></div>
+      <div id="choices" role="group" aria-labelledby="question-title" aria-describedby="hint"></div>
+    </div>
+    <div id="feedback" role="status" aria-live="polite" aria-atomic="true"></div>
+    <button id="next" type="button" hidden>Next question →</button>
+  </section>
+  <section id="results" hidden><h2 id="result-title" tabindex="-1">Quiz complete!</h2><p id="result-score"></p></section>
+  <button id="restart" class="secondary" type="button">Shuffle &amp; restart</button>
+  <footer>10 sentences · Your answers stay in this browser tab.</footer>
+</main>
+</body>
+</html>
