@@ -17,6 +17,8 @@ function showQuestion(focus = false) {
   blank.textContent = '___';
   blank.setAttribute('aria-label', 'blank');
   byId('question-title').replaceChildren(blank, document.createTextNode(item.sentence.slice(3)));
+  byId('translation').hidden = true;
+  byId('translation').textContent = '';
   byId('next').hidden = true;
   byId('choices').replaceChildren();
   shuffle(item.choices).forEach(choice => {
@@ -36,6 +38,11 @@ function grade(choice) {
   const item = order[current];
   const correct = choice === item.answer;
   if (correct) score++;
+  const blank = byId('question-title').querySelector('.blank');
+  blank.textContent = item.answer;
+  blank.removeAttribute('aria-label');
+  byId('translation').textContent = item.translation;
+  byId('translation').hidden = false;
   [...byId('choices').children].forEach(button => {
     button.disabled = true;
     if (button.textContent === item.answer) button.classList.add('correct');

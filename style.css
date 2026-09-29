@@ -1,12 +1,12 @@
-:root { font-family: Arial, Helvetica, sans-serif; color: #172e39; background: #f4f6f3; font-size: 30px; font-weight: 700; }
+:root { font-family: Arial, Helvetica, sans-serif; color: #172e39; background: #f4f6f3; font-size: 44px; font-weight: 700; }
 * { box-sizing: border-box; }
 body { margin: 0; }
-main { max-width: 1100px; margin: auto; padding: 48px 24px; }
+main { max-width: 1500px; margin: auto; padding: 48px 24px; }
 p { line-height: 1.5; }
-.question-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(150px, .48fr); gap: 24px; align-items: start; }
+.question-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(270px, .48fr); gap: 24px; align-items: start; }
 .sentence-panel { padding: 24px; background: white; border: 2px solid #d8e0da; border-radius: 16px; }
 .hint { margin: 0 0 20px; color: #356656; font-size: 1rem; }
-#question-title { font-size: 1.25rem; line-height: 1.5; margin: 0; overflow-wrap: anywhere; }
+#question-title { font-size: 1.45rem; line-height: 1.5; margin: 0; overflow-wrap: anywhere; }
 .blank { white-space: nowrap; color: #176149; }
 #choices { display: grid; gap: 12px; }
 button { background: #176149; color: white; border: 2px solid transparent; border-radius: 12px; padding: 20px 28px; font: inherit; cursor: pointer; }
@@ -21,9 +21,9 @@ button:hover { background: #104b38; }
 #restart { margin-top: 32px; }
 .secondary { background: transparent; border-color: #176149; color: #176149; }
 .secondary:hover { background: #e7f1eb; }
-footer { margin-top: 40px; font-size: .75rem; color: #52625c; line-height: 1.5; }
 [hidden] { display: none !important; }
-@media (max-width: 600px) { main { padding: 28px 14px; } .question-row { grid-template-columns: minmax(0, 1fr) 140px; gap: 12px; } .sentence-panel { padding: 16px 12px; } .choice { padding: 16px 10px; } }
-@media (max-width: 380px) { .question-row { grid-template-columns: minmax(0, 1fr) 115px; gap: 8px; } .sentence-panel { padding: 12px 8px; } }
 
 #next { margin-top: 24px; }
+
+#translation { margin: 28px 0 0; padding-top: 24px; border-top: 2px solid #d8e0da; color: #356656; font-size: 1.1rem; line-height: 1.4; }
+@media (max-width: 600px) { main { padding: 24px 10px; } .question-row { grid-template-columns: minmax(0, 1fr) 44%; gap: 10px; } .sentence-panel { padding: 16px 10px; } .choice { padding: 20px 8px; font-size: clamp(26px, 7vw, 42px); } #question-title { font-size: 42px; } .hint, #translation { font-size: 34px; } button { padding: 20px 14px; } }
