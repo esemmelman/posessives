@@ -1,5 +1,17 @@
 const byId = id => document.getElementById(id);
 let order, current, score, answered;
+const possessiveDescriptions = {
+  Mi: '“my” with a singular noun',
+  Mis: '“my” with a plural noun',
+  Tu: '“your” (one friend) with a singular noun',
+  Tus: '“your” (one friend) with a plural noun',
+  Su: '“his,” “her,” “its,” “their,” or formal “your” with a singular noun',
+  Sus: '“his,” “her,” “its,” “their,” or formal “your” with a plural noun',
+  Nuestro: '“our” with a masculine singular noun',
+  Nuestra: '“our” with a feminine singular noun',
+  Nuestros: '“our” with a masculine plural noun',
+  Nuestras: '“our” with a feminine plural noun'
+};
 function shuffle(items) {
   const result = [...items];
   for (let i = result.length - 1; i > 0; i--) {
@@ -17,6 +29,8 @@ function showQuestion(focus = false) {
   blank.textContent = '___';
   blank.setAttribute('aria-label', 'blank');
   byId('question-title').replaceChildren(blank, document.createTextNode(item.sentence.slice(3)));
+  byId('explanation').hidden = true;
+  byId('explanation').textContent = '';
   byId('translation').hidden = true;
   byId('translation').textContent = '';
   byId('next').hidden = true;
@@ -38,6 +52,10 @@ function grade(choice) {
   const item = order[current];
   const correct = choice === item.answer;
   if (correct) score++;
+  else {
+    byId('explanation').textContent = `Not quite. ${choice} is used for ${possessiveDescriptions[choice]}. This sentence needs ${item.answer.toLowerCase()}: ${item.explanation}`;
+    byId('explanation').hidden = false;
+  }
   const blank = byId('question-title').querySelector('.blank');
   blank.textContent = item.answer;
   blank.removeAttribute('aria-label');

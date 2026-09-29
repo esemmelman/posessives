@@ -31,3 +31,5 @@ button:hover { background: #104b38; }
 .sentence-column { min-width: 0; }
 #controls { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin-top: 12px; }
 #controls button { max-width: 100%; overflow-wrap: anywhere; margin-top: 0; }
+
+#explanation { margin: 20px 0; padding: 16px; border-left: 6px solid #8b1e24; background: #fff0eb; color: #752026; font-size: 1rem; overflow-wrap: anywhere; }
