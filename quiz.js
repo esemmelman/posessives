@@ -72,7 +72,7 @@ function grade(choice) {
   });
   byId('next').textContent = current === order.length - 1 ? 'See results →' : 'Next question →';
   byId('next').hidden = false;
-  byId('next').focus();
+  byId('next').focus({ preventScroll: true });
 }
 byId('next').addEventListener('click', () => {
   if (!answered) return;
