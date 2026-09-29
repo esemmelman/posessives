@@ -14,13 +14,17 @@
   <noscript>Please enable JavaScript to take the quiz.</noscript>
   <section id="question-area" aria-labelledby="question-title">
     <div class="question-row">
+      <div class="sentence-column">
       <div class="sentence-panel"><p id="hint" class="hint"></p><h2 id="question-title" lang="es" tabindex="-1"></h2><p id="translation" lang="en" aria-live="polite" hidden></p></div>
+      <div id="controls">
+    <button id="next" type="button" hidden>Next question →</button>
+  <button id="restart" class="secondary" type="button">Shuffle &amp; restart</button>
+      </div>
+      </div>
       <div id="choices" role="group" aria-labelledby="question-title" aria-describedby="hint"></div>
     </div>
-    <button id="next" type="button" hidden>Next question →</button>
   </section>
   <section id="results" hidden><h2 id="result-title" tabindex="-1">Quiz complete!</h2><p id="result-score"></p></section>
-  <button id="restart" class="secondary" type="button">Shuffle &amp; restart</button>
 </main>
 </body>
 </html>

@@ -58,6 +58,7 @@ byId('next').addEventListener('click', () => {
   if (current < order.length) return showQuestion(true);
   byId('question-area').hidden = true;
   byId('results').hidden = false;
+  byId('results').append(byId('restart'));
   byId('result-score').textContent = `You scored ${score} out of ${order.length} (${Math.round(score / order.length * 100)}%).`;
   byId('result-title').focus();
 });
@@ -65,6 +66,7 @@ function restart(focus = false) {
   order = shuffle(questions);
   current = 0;
   score = 0;
+  byId('controls').append(byId('restart'));
   byId('results').hidden = true;
   byId('question-area').hidden = false;
   showQuestion(focus);
